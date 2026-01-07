@@ -2,50 +2,130 @@
 //Console.WriteLine("Hello C#!");
 
 /*
-bool flag = true ;
-int value = 0 ;
+int employeeLevel = 100 ;
+string employeeName = "John Smith" ;
 
-if( flag )
+string title = "" ;
+
+switch( employeeLevel)
 {
-    Console.WriteLine($"Inside the code block: {value}") ;
+    case 100:
+    case 200:
+        title = "Senior Associate" ;
+        break ;
+
+    case 300:
+        title = "Manager" ;
+        break ;
+
+    case 400:
+        title = "Senior Manager" ;
+        break ;
+
+    default:
+        title = "Associate" ;
+        break ;
 }
 
-value = 10 ;
-Console.WriteLine($"Outside the code block: {value}") ;
+Console.WriteLine($"{employeeName}, {title}") ;
 */
 
-/*
-bool flag = true ;
-if( flag) Console.WriteLine( flag ) ;
-*/
+// SKU = Stock Keeping Unit. 
+// SKU value format: <product #>-<2-letter color code>-<size code>
 
-/*
-string name = "steve" ;
+string sku = "01-MN-L" ;
 
-if( name == "bob" )
-    Console.WriteLine("Found Bob") ;
-else if( name == "steve" )
-    Console.WriteLine("Found Steve") ;
-else
-    Console.WriteLine("Found chuck") ;
-*/
+string[] product = sku.Split('-') ;
 
-int[] numbers = { 4, 8, 15, 16, 23, 44 } ;
-int total = 0 ;
-bool found = false ;
+string type = "" ;
+string color = "" ;
+string size = "" ;
 
-foreach(int number in numbers)
+switch( product[0])
 {
-    total += number;
-
-    if( number == 42 )
-       found = true ;
+    case "01":
+        type = "Sweat shirt" ;
+        break ;
+    case "02":
+        type = "T-Shirt" ;
+        break ;
+    case "03":
+        type = "Sweat pants" ;
+        break ;
+    default:
+        type = "Other" ;
+        break ;
 }
 
-if( found ) 
-    Console.WriteLine("Set contains 42") ;
+switch( product[1])
+{
+    case "BL":
+        color = "Black" ;
+        break ;
+    case "MN":
+        color = "Maroon" ;
+        break ;
+    default:
+        color = "White" ;
+        break ;
+}
+
+switch( product[2])
+{
+    case "S":
+        size = "Small" ;
+        break ;
+    case "M":
+        size = "Medium" ;
+        break ;
+    case "L":
+        size = "Large" ;
+        break ;
+    default:
+        size = "One Size Fits All" ;
+        break ;
+}
+Console.WriteLine($"Product: {size} {color} {type}");
+/*
+if (product[0] == "01")
+{
+    type = "Sweat shirt";
+} else if (product[0] == "02")
+{
+    type = "T-Shirt";
+} else if (product[0] == "03")
+{
+    type = "Sweat pants";
+}
 else
-
-    Console.WriteLine("Set not contains 42") ;
-
-Console.WriteLine($"Total: {total}") ;
+{
+    type = "Other";
+}
+*/
+/*
+if (product[1] == "BL")
+{
+    color = "Black";
+} else if (product[1] == "MN")
+{
+    color = "Maroon";
+} else
+{
+    color = "White";
+}
+*/
+/*
+if (product[2] == "S")
+{
+    size = "Small";
+} else if (product[2] == "M")
+{
+    size = "Medium";
+} else if (product[2] == "L")
+{
+    size = "Large";
+} else
+{
+    size = "One Size Fits All";
+}
+*/
