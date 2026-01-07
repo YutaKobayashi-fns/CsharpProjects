@@ -6,4 +6,6 @@ ___
 3rd： 配列・foreachステートメントの[カリキュラム](https://learn.microsoft.com/ja-jp/training/modules/csharp-arrays/)  
 4th： コメント・改行等に関する[カリキュラム](https://learn.microsoft.com/ja-jp/training/modules/csharp-readable-code/)  
 5th： 2nd~4thまでの複合[カリキュラム](https://learn.microsoft.com/ja-jp/training/modules/guided-project-arrays-iteration-selection/)  
-6th:  Learn1[まとめ](https://learn.microsoft.com/ja-jp/training/modules/challenge-project-arrays-iteration-selection/)
+6th:　Learn1[まとめ](https://learn.microsoft.com/ja-jp/training/modules/challenge-project-arrays-iteration-selection/)
+
+7th:　ブール式に関する[カリキュラム](https://learn.microsoft.com/ja-jp/training/modules/csharp-evaluate-boolean-expressions/)  
