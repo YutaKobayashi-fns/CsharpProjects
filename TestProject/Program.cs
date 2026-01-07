@@ -1,41 +1,53 @@
 ﻿// See https://aka.ms/new-console-template for more information
 //Console.WriteLine("Hello C#!");
+
+Random random = new Random() ;
+int current = random.Next( 1, 11 ) ;
 /*
-for( int i = 0 ; i < 10 ; i++ )
+do
 {
-    Console.WriteLine( i ) ;
-    if( i== 7 ) break ;
-}
+    current = random.Next( 1, 11 ) ;
+
+    if( current >= 8 ) continue ;
+
+    Console.WriteLine( current ) ;
+} while( current != 7 ) ;
 */
-
 /*
-string[] names = {"Alex", "Eddie", "David", "Michael"} ;
-
-for( int i = 0 ; i < names.Length ; i++ )
+while( current >= 3 )
 {
-    if( names[i] == "David" ) names[i] = "Sammy" ;
+    Console.WriteLine( current ) ;
+    current = random.Next( 1, 11 ) ;
 }
-
-foreach( var name in names ) Console.WriteLine( name ) ;
+Console.WriteLine($"Last number: {current}") ;
 */
 
 //演習
-for( int i = 1 ; i <= 100 ; i++ )
+
+int heroHealthPoint = 10 ;
+int monsterHealthPoint = 10 ;
+int currentAttackPoint = 0 ;
+Random currentAttackDamege = new Random() ;
+
+while( heroHealthPoint > 0 )
 {
-    if(( i % 3 == 0 ) && ( i % 5 == 0))
+    currentAttackPoint = currentAttackDamege.Next( 1, 11 ) ;
+    monsterHealthPoint -= currentAttackPoint ;
+    Console.WriteLine($"Monster was damaged and lost {currentAttackPoint} health and now has {monsterHealthPoint} health.") ;
+
+    if( monsterHealthPoint <= 0 )
     {
-        Console.WriteLine($"{i} - FizzBuzz") ;
+        Console.WriteLine("Hero wins!") ;
+        break ;
     }
-    else if( i % 3 == 0)
+
+    currentAttackPoint = currentAttackDamege.Next( 1, 11 ) ;
+    heroHealthPoint -= currentAttackPoint ;
+    Console.WriteLine($"Hero was damaged and lost {currentAttackPoint} health and now has {heroHealthPoint} health") ;
+
+    if( heroHealthPoint <= 0 )
     {
-        Console.WriteLine($"{i} - Fizz") ;
-    }
-    else if( i % 5 == 0)
-    {
-        Console.WriteLine($"{i} - Buzz") ;
-    }
-    else
-    {
-        Console.WriteLine( i ) ;
+        Console.WriteLine("Hero is Lose...") ;
+        break ;
     }
 }
