@@ -9,3 +9,4 @@ ___
 6th:　Learn1[まとめ](https://learn.microsoft.com/ja-jp/training/modules/challenge-project-arrays-iteration-selection/)
 
 7th:　ブール式に関する[カリキュラム](https://learn.microsoft.com/ja-jp/training/modules/csharp-evaluate-boolean-expressions/)  
+8th:　コードブロックに関する[カリキュラム](https://learn.microsoft.com/ja-jp/training/modules/csharp-code-blocks/)  
