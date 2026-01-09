@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using System.Net.Http.Headers;
 
 // the ourAnimals array will store the following: 
 string animalSpecies = "";
@@ -287,13 +288,119 @@ do
 
         case "3":
             // Ensure animal ages and physical descriptions are complete
-            Console.WriteLine("Challenge Project - please check back soon to see progress.");
+            for (int i = 0; i < maxPets; i++)
+            {
+                string currentAnimalID = ourAnimals[i, 0];
+
+                // 動物のIDは設定ありか？
+                if (currentAnimalID != "ID #: ")
+                {
+                    // 有効値判定用変数
+                    int animalAgeValue = 0;
+                    bool animalAgeValid = false;
+                    bool animalPhysicalDescriptionValid = false;
+
+                    // 参照情報格納変数
+                    string currentAnimalAge = "";
+                    string currentAnimalPhysicalDescription = "";
+
+                    // 動物年齢チェックブロック
+                    do
+                    {
+                        // 動物の年齢に規定値以外が設定されているか？
+                        if (ourAnimals[i, 2] != "Age: ")
+                        {
+                            currentAnimalAge = ourAnimals[i, 2].Substring(5);
+
+                            animalAgeValid = int.TryParse(currentAnimalAge, out animalAgeValue);
+                        }
+
+                        // 動物の年齢入力が必要か？
+                        if (animalAgeValid == false)
+                        {
+                            Console.WriteLine($"Enter an age for {currentAnimalID}");
+                            readResult = Console.ReadLine();
+
+                            // nullチェック
+                            if (readResult != null)
+                            {
+                                string readAgeValue = readResult;
+
+                                animalAgeValid = int.TryParse(readAgeValue, out animalAgeValue);
+
+                                // 入力情報は有効値か？
+                                if (animalAgeValid == true)
+                                {
+                                    ourAnimals[i, 2] = "Age: " + readAgeValue;
+                                    animalAgeValid = true;
+                                }
+                            }
+                        }
+                    } while (animalAgeValid == false);
+
+                    // 動物の説明チェックブロック
+                    do
+                    {
+                        currentAnimalPhysicalDescription = ourAnimals[i, 4];
+
+                        // 動物の説明に規定値以外が設定されているか？
+                        if (currentAnimalPhysicalDescription != "Physical description: ")
+                        {
+                            if ((currentAnimalPhysicalDescription != null) && (currentAnimalPhysicalDescription.Length > 0))
+                            {
+                                bool spaceCheck = currentAnimalPhysicalDescription.StartsWith(' ');
+                                if (spaceCheck == false)
+                                {
+                                    animalPhysicalDescriptionValid = true;
+                                }
+                            }
+
+                            animalPhysicalDescriptionValid = true;
+                        }
+
+                        // 動物の説明入力が必要か？
+                        if (animalPhysicalDescriptionValid == false)
+                        {
+                            Console.WriteLine($"Enter a physical description for  {currentAnimalID} (size, color, breed, gender, weight, housebroken)");
+                            readResult = Console.ReadLine();
+
+                            // nullチェック
+                            if (readResult != null)
+                            {
+                                string readPhysicalDescriptionValue = readResult;
+                                bool spaceCheck = true;
+
+                                if (readPhysicalDescriptionValue.Length > 0)
+                                {
+                                    spaceCheck = readPhysicalDescriptionValue.StartsWith(' ');
+                                }
+
+                                // 入力情報は有効値か？
+                                if (spaceCheck == false)
+                                {
+                                    ourAnimals[i, 4] = "Physical description: " + readPhysicalDescriptionValue;
+                                    animalPhysicalDescriptionValid = true;
+                                }
+                            }
+
+                        }
+                    } while (animalPhysicalDescriptionValid == false);
+
+                }
+
+            }
+            Console.Clear();
+
+            Console.WriteLine("\n\rAge and physical description fields are complete for all of our friends.");
             Console.WriteLine("Press the Enter key to continue.");
             readResult = Console.ReadLine();
             break;
 
         case "4":
             // Ensure animal nicknames and personality descriptions are complete
+            //test
+
+            //test
             Console.WriteLine("Challenge Project - please check back soon to see progress.");
             Console.WriteLine("Press the Enter key to continue.");
             readResult = Console.ReadLine();
@@ -312,7 +419,7 @@ do
             Console.WriteLine("Press the Enter key to continue.");
             readResult = Console.ReadLine();
             break;
-        
+
         case "7":
             // Display all cats with a specified characteristic
             Console.WriteLine("UNDER CONSTRUCTION - please check back next month to see progress.");
