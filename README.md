@@ -12,5 +12,5 @@ ___
 8th:　コードブロックに関する[カリキュラム](https://learn.microsoft.com/ja-jp/training/modules/csharp-code-blocks/)  
 9th:　switch-caseに関する[カリキュラム](https://learn.microsoft.com/ja-jp/training/modules/csharp-switch-case/)  
 10th:　forステートメントに関する[カリキュラム](https://learn.microsoft.com/ja-jp/training/modules/csharp-for/)  
-11th:　do-while・whileステートメントに関する[カリキュラム(途中)](https://learn.microsoft.com/ja-jp/training/modules/csharp-do-while/4-review-solution-do-while-statements-challenge)
+11th:　do-while・whileステートメントに関する[カリキュラム(途中)](https://learn.microsoft.com/ja-jp/training/modules/csharp-do-while/4-review-solution-do-while-statements-challenge)  
 12th:　do-while・whileステートメントに関する[カリキュラム(完)](https://learn.microsoft.com/ja-jp/training/modules/csharp-do-while/)  
