@@ -341,12 +341,12 @@ do
                     // 動物の説明チェックブロック
                     do
                     {
-                        currentAnimalPhysicalDescription = ourAnimals[i, 4];
-
                         // 動物の説明に規定値以外が設定されているか？
-                        if (currentAnimalPhysicalDescription != "Physical description: ")
+                        if (ourAnimals[i, 4] != "Physical description: ")
                         {
-                            if ((currentAnimalPhysicalDescription != null) && (currentAnimalPhysicalDescription.Length > 0))
+                            currentAnimalPhysicalDescription = ourAnimals[i, 4].Substring(22);
+
+                            if ((currentAnimalPhysicalDescription != null) && (currentAnimalPhysicalDescription.Substring(22).Length > 0))
                             {
                                 bool spaceCheck = currentAnimalPhysicalDescription.StartsWith(' ');
                                 if (spaceCheck == false)
@@ -398,10 +398,115 @@ do
 
         case "4":
             // Ensure animal nicknames and personality descriptions are complete
-            //test
+            for (int i = 0; i < maxPets; i++)
+            {
+                string currentAnimalID = ourAnimals[i, 0];
 
-            //test
-            Console.WriteLine("Challenge Project - please check back soon to see progress.");
+                // 動物のIDは設定ありか？
+                if (currentAnimalID != "ID #: ")
+                {
+                    // 有効値判定用変数
+                    bool animalNicknameValid = false;
+                    bool animalPersonalityDescriptionValid = false;
+
+                    // 参照情報格納変数
+                    string currentanimalNickname = "";
+                    string currentanimalPersonalityDescription = "";
+
+                    // 動物のニックネームチェックブロック
+                    do
+                    {
+                        // 動物のニックネームに規定値以外が設定されているか？
+                        if (ourAnimals[i, 3] != "Nickname: ")
+                        {
+                            currentanimalNickname = ourAnimals[i, 3].Substring(10);
+
+                            if ((currentanimalNickname != null) && (currentanimalNickname.Length > 0))
+                            {
+                                bool spaceCheck = currentanimalNickname.StartsWith(' ');
+                                if (spaceCheck == false)
+                                {
+                                    animalNicknameValid = true;
+                                }
+                            }
+                        }
+
+                        // 動物のニックネームは入力が必要か？
+                        if (animalNicknameValid == false)
+                        {
+                            Console.WriteLine($"Enter an nickname for {currentAnimalID}");
+                            readResult = Console.ReadLine();
+
+                            // nullチェック
+                            if (readResult != null)
+                            {
+                                string readNicknameValue = readResult;
+                                bool spaceCheck = true;
+
+                                if (readNicknameValue.Length > 0)
+                                {
+                                    spaceCheck = readNicknameValue.StartsWith(' ');
+                                }
+
+                                // 入力情報は有効値か？
+                                if (spaceCheck == false)
+                                {
+                                    ourAnimals[i, 3] = "Nickname: " + readNicknameValue;
+                                    animalNicknameValid = true;
+                                }
+                            }
+                        }
+                    } while (animalNicknameValid == false);
+
+                    // 動物の性格チェックブロック
+                    do
+                    {
+                        // 動物の性格に規定値以外が設定されているか？
+                        if (ourAnimals[i, 5] != "Personality: ")
+                        {
+                            currentanimalPersonalityDescription = ourAnimals[i, 5].Substring(13);
+
+                            if ((currentanimalPersonalityDescription != null) && (currentanimalPersonalityDescription.Length > 0))
+                            {
+                                bool spaceCheck = currentanimalPersonalityDescription.StartsWith(' ');
+                                if (spaceCheck == false)
+                                {
+                                    animalPersonalityDescriptionValid = true;
+                                }
+                            }
+                        }
+
+                        // 動物の性格は入力が必要か？
+                        if (animalPersonalityDescriptionValid == false)
+                        {
+                            Console.WriteLine($"Enter a personality description for {currentAnimalID} (likes or dislikes, tricks, energy level)");
+                            readResult = Console.ReadLine();
+
+                            // nullチェック
+                            if (readResult != null)
+                            {
+                                string readPersonalityDescriptionValue = readResult;
+                                bool spaceCheck = true;
+
+                                if (readPersonalityDescriptionValue.Length > 0)
+                                {
+                                    spaceCheck = readPersonalityDescriptionValue.StartsWith(' ');
+                                }
+
+                                // 入力情報は有効値か？
+                                if (spaceCheck == false)
+                                {
+                                    ourAnimals[i, 5] = "Personality: " + readPersonalityDescriptionValue;
+                                    animalPersonalityDescriptionValid = true;
+                                }
+                            }
+                        }
+                    } while (animalPersonalityDescriptionValid == false);
+                }
+            }
+            Console.Clear();
+
+            Console.WriteLine("\n\rNickname and personality description fields are complete for all of our friends.");
             Console.WriteLine("Press the Enter key to continue.");
             readResult = Console.ReadLine();
             break;
