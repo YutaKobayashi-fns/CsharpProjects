@@ -17,3 +17,4 @@ ___
 13th:　13th:7th~12thまでの複合[カリキュラム](https://learn.microsoft.com/ja-jp/training/modules/guided-project-develop-conditional-branching-looping/)  
 14th:　Learn2[まとめ(途中)](https://learn.microsoft.com/ja-jp/training/modules/challenge-project-develop-branching-looping-structures-c-sharp/3-exercise-build-loop-verify-physical)  
 15th:　Learn2[まとめ(完)](https://learn.microsoft.com/ja-jp/training/modules/challenge-project-develop-branching-looping-structures-c-sharp/)  
+16th:　データ型の選択に関する[カリキュラム](https://learn.microsoft.com/ja-jp/training/modules/csharp-choose-data-type/)  
