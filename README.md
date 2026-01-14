@@ -20,3 +20,4 @@ ___
 16th:　データ型の選択に関する[カリキュラム](https://learn.microsoft.com/ja-jp/training/modules/csharp-choose-data-type/)  
 17th:　キャストと変換に関する[カリキュラム](https://learn.microsoft.com/ja-jp/training/modules/csharp-convert-cast/)  
 18th:　ヘルパーメソッドを使用した配列への操作に関する[カリキュラム](https://learn.microsoft.com/ja-jp/training/modules/csharp-arrays-operations/)  
+19th:　英数字データの書式設定に関する[カリキュラム](https://learn.microsoft.com/ja-jp/training/modules/csharp-format-strings/)  
